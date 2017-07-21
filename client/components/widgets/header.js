@@ -9,8 +9,7 @@ class Header extends React.Component {
         <Grid>
           <Row >
             <Col md={6}>
-              <Link to="/">Sample</Link>
-              <small> A sample app</small>
+              <Link to="/">Sophia</Link>
             </Col>
             <Col md={5} >
               <Nav bsStyle="pills" style={{ fontSize: '22px' }} pullRight={true}>
