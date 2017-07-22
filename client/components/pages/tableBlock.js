@@ -50,7 +50,7 @@ export default class TableBlock extends React.Component {
     console.log(this.state.index)
     const headers = ["Job Title", "Female Avg Hourly Wage", "Male Avg Hourly Wage"];
 
-    const inputData = data.data.slice(0,100);
+    const inputData = data.data;
     let outputData = inputData.map((row) => {
       return [row[8], row[9], row[15]];
     });
