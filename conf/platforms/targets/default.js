@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   app: {
     name: 'Sophia',
-    title: 'data'
+    title: 'Sophia'
   },
   server: {
     port: 5000

@@ -23,3 +23,15 @@
 
 .ws_data_table tr:nth-child(even) {
   background-color: #E6E6E6; }
+
+.ws_pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+.ws_pagination_prev {
+  margin-right: 20px;
+}
+
+.ws_pagination_next{
+  margin-left: 20px;
+}

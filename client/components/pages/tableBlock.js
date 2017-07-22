@@ -15,7 +15,7 @@ export default class TableBlock extends React.Component {
   }
 
   state = {
-    sortedColumn: null,
+    sortedColumn: 0,
     isAscending: false,
     index: 0
   };
@@ -45,30 +45,47 @@ export default class TableBlock extends React.Component {
     }
   }
 
+  comparator = ::this.comparator
+  comparator(a, b) {
+    if (a[this.state.sortedColumn] < b[this.state.sortedColumn]) return -1;
+    if (a[this.state.sortedColumn] > b[this.state.sortedColumn]) return 1;
+    return 0;
+  }
+
+  sort = ::this.sort
+  sort(i) {
+    console.log('sorted',i)
+    this.setState({
+      sortedColumn: i
+    })
+  }
+
   render() {
     const { isSortable, columns, rows } = this.props;
-    console.log(this.state.index)
     const headers = ["Job Title", "Female Avg Hourly Wage", "Male Avg Hourly Wage"];
-
+    const indexStart = this.state.index;
+    const indexEnd = this.state.index + 24;
     const inputData = data.data;
-    let outputData = inputData.map((row) => {
-      return [row[8], row[9], row[15]];
+    let outputData = [];
+    inputData.forEach((row) => {
+      if (row[9] && row[15] && row[9] !== row[15]) {
+        outputData.push([row[8], row[9], row[15]]);
+      }
     });
-    outputData = outputData.slice(this.state.index, this.state.index+25);
-
+    outputData = outputData.slice(indexStart, indexEnd);
+    outputData = outputData.sort(this.comparator);
     const componentTypes = {
       string: (item) => (item),
       number: (item) => (item)
     };
     
-    console.log(outputData)
     return (
       <div>
         <table className="ws_data_table" >
           <thead className="ws_data_table th">
             <tr>
               {headers.map((header, i) => {
-                return (<th key={i}>{header}</th>)
+                return (<th key={i} onClick={() => this.sort(i)}>{header}</th>)
               })}
             </tr>
           </thead>
@@ -81,8 +98,11 @@ export default class TableBlock extends React.Component {
             })}
           </tbody>
         </table>
-        <button onClick={this.nextPage}>Next Page</button>
-        <button onClick={this.prevPage}>Previous Page</button>
+        <div className="ws_pagination">
+          <button className="ws_pagination_prev" onClick={this.prevPage}>{"<<"}</button>
+          <span>{`${indexStart + 1}-${indexEnd+1}`}</span>
+          <button className="ws_pagination_next" onClick={this.nextPage}>{">>"}</button>
+        </div>
       </div>
     );
   }
