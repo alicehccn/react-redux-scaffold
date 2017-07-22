@@ -5,6 +5,7 @@ import TableBlock from './tableBlock';
 
 class HomePage extends React.Component {
   render() {
+    
     return (
       <div>
         <Grid>

@@ -2,22 +2,6 @@ body {
   //background: darkcyan;
 }
 
-* @group Data Tables */
-
-.ws_data_table {
-  border-collapse: collapse;
-  border-color: #537DB9;
-  border-width: 1px;
-  border-style: solid;
-  margin-bottom: 15px;
-}
-
-.ws_data_table caption {
-  text-align: left;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
 .ws_data_table th {
   text-transform: inherit;
   white-space: nowrap;
@@ -45,4 +29,4 @@ body {
   background-color: #E6E6E6;
 }
 
-/* @end */
+
