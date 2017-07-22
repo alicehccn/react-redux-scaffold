@@ -1,3 +1,6 @@
+.ws_data_table {
+  width: 100%;
+}
 .ws_data_table th {
   text-transform: inherit;
   white-space: nowrap;
