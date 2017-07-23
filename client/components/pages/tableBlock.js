@@ -40,7 +40,7 @@ export default class TableBlock extends React.Component {
   prevPage() {
     if (this.state.index >= 2) {
       this.setState({
-          index: this.state.index - 25
+        index: this.state.index - 25
       });
     }
   }
@@ -54,9 +54,9 @@ export default class TableBlock extends React.Component {
 
   sort = ::this.sort
   sort(i) {
-    console.log('sorted',i)
     this.setState({
-      sortedColumn: i
+      sortedColumn: i,
+      index: 0
     })
   }
 
@@ -72,8 +72,8 @@ export default class TableBlock extends React.Component {
         outputData.push([row[8], row[9], row[15]]);
       }
     });
-    outputData = outputData.slice(indexStart, indexEnd);
     outputData = outputData.sort(this.comparator);
+    outputData = outputData.slice(indexStart, indexEnd);
     const componentTypes = {
       string: (item) => (item),
       number: (item) => (item)
