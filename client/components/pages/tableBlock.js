@@ -42,13 +42,28 @@ export default class TableBlock extends React.Component {
 
   comparator = ::this.comparator
   comparator(a, b) {
-    if (a[this.state.sortedColumn] < b[this.state.sortedColumn]) return -1;
-    if (a[this.state.sortedColumn] > b[this.state.sortedColumn]) return 1;
+    if (a[this.state.sortedColumn] < b[this.state.sortedColumn]) {
+      if (this.state.isAscending) return -1;
+      else return 1;
+    }
+    if (a[this.state.sortedColumn] > b[this.state.sortedColumn]) {
+      if (this.state.isAscending) return 1;
+      else return -1;
+    }
     return 0;
   }
 
   sort = ::this.sort
   sort(i) {
+    if (this.state.sortedColumn == i) {
+      this.setState({
+        isAscending: !this.state.isAscending
+      })
+    } else {
+      this.setState({
+        isAscending: true
+      })
+    }
     this.setState({
       sortedColumn: i,
       index: 0
@@ -73,8 +88,6 @@ export default class TableBlock extends React.Component {
       string: (item) => (item),
       number: (item) => (item)
     };
-
-    console.log(this.state.sortedColumn)
     
     return (
       <div>
