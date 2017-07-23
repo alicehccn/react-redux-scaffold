@@ -1,5 +1,6 @@
 .ws_data_table {
-  width: 100%; }
+  width: 100%;
+  table-layout: fixed; }
 
 .ws_data_table {
   width: 100%; }
@@ -8,13 +9,15 @@
   text-transform: inherit;
   white-space: nowrap;
   background-color: #337ab7;
-  /*background-color: #3366CC;*/
-  cursor: pointer;
   color: #FFFFFF;
   padding: 20px 20px 20px 20px;
   border-right: #FFFFFF;
   border-width: 1px;
-  border-style: none dotted none none; }
+  border-style: none dotted none none;
+  cursor: pointer; }
+
+.ws_data_table--sorted {
+  opacity: 0.8; }
 
 .ws_data_table td {
   padding: 5px 20px 5px 20px;

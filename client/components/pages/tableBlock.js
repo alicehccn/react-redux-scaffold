@@ -4,19 +4,14 @@ import data from '../data/rows.json';
 
 export default class TableBlock extends React.Component {
   static propTypes = {
-    columns: React.PropTypes.array,
-    rows: React.PropTypes.array,
-    isSortable: React.PropTypes.bool,
-    columnName: React.PropTypes.string
   }
 
   static defaultProps = {
-    isSortable: false
   }
 
   state = {
     sortedColumn: 0,
-    isAscending: false,
+    isAscending: true,
     index: 0
   };
 
@@ -78,6 +73,8 @@ export default class TableBlock extends React.Component {
       string: (item) => (item),
       number: (item) => (item)
     };
+
+    console.log(this.state.sortedColumn)
     
     return (
       <div>
@@ -85,7 +82,10 @@ export default class TableBlock extends React.Component {
           <thead className="ws_data_table th">
             <tr>
               {headers.map((header, i) => {
-                return (<th key={i} onClick={() => this.sort(i)}>{header}</th>)
+                return (<th
+                  key={i} 
+                  onClick={() => this.sort(i)}
+                  className={this.state.sortedColumn === i ? "ws_data_table--sorted" : null}>{header}</th>)
               })}
             </tr>
           </thead>
