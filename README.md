@@ -15,8 +15,8 @@ npm start
 # Open the web browser at http://localhost:5000
 ```
 ## Functionalities
-##### Sort by job titles/genders (both ascending and descending)
-##### Navigate by page (25 rows each)
+#### Sort by job titles/genders (both ascending and descending)
+#### Navigate by page (25 rows each)
 
 ## Credits
 #### react-redux-scaffold by sytac
