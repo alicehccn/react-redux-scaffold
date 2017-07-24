@@ -5,7 +5,7 @@ A paginated table built on a React-Redux framework.
 
 
 ## How to use?
-
+```
 # Install the node dependencies
 npm install .
 
