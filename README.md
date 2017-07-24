@@ -16,7 +16,7 @@ npm start
 ```
 
 ## Credits
-### react-redux-scaffold by sytac
+#### react-redux-scaffold by sytac
 `https://github.com/sytac/react-redux-scaffold`
-### City of Seattle Wages: Comparison by Gender - All Job Classifications
+#### City of Seattle Wages: Comparison by Gender - All Job Classifications
 `https://catalog.data.gov/dataset/city-of-seattle-wages-comparison-by-gender-all-job-classifications-e471a`
