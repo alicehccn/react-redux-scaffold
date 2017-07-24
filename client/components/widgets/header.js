@@ -9,13 +9,15 @@ class Header extends React.Component {
         <Grid>
           <Row >
             <Col md={6}>
-              <Link to="/">City of Seattle Wages</Link>
+              <Link to="/">Sophia</Link>
             </Col>
+
             <Col md={5} >
               <Nav bsStyle="pills" style={{ fontSize: '22px' }} pullRight={true}>
               </Nav>
             </Col>
           </Row>
+          <h4>City of Seattle Wages:  Comparison by Gender - All Job Classifications</h3>
         </Grid>
       </PageHeader>
     );

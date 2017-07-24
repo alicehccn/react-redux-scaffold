@@ -1,13 +1,16 @@
 body {
   //background: darkcyan;
 }
+h4 {
+  color: grey;
+}
 .ws_data_table {
   width: 100%;
-  table-layout: fixed; 
+  table-layout: fixed;
 }
 
 .ws_data_table {
-  width: 100%; 
+  width: 100%;
 }
 
 .ws_data_table th {
@@ -18,12 +21,12 @@ body {
   padding: 20px 20px 20px 20px;
   border-right: #FFFFFF;
   border-width: 1px;
-  border-style: none dotted none none; 
+  border-style: none dotted none none;
   cursor: pointer;
 }
 
 .ws_data_table--sorted {
-  opacity: 0.8; 
+  opacity: 0.8;
 };
 
 .ws_data_table td {
@@ -35,11 +38,11 @@ body {
 }
 
 .ws_data_table tr:nth-child(odd) {
-  background-color: #FFFFFF; 
+  background-color: #FFFFFF;
 }
 
 .ws_data_table tr:nth-child(even) {
-  background-color: #E6E6E6; 
+  background-color: #E6E6E6;
 }
 
 .ws_pagination {
