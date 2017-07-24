@@ -1,7 +1,7 @@
 # Sophia
 
 ## What is it?
-A paginated table built on a React-Redux framework.
+A HTML paginated table built on a React-Redux framework.
 
 
 ## How to use?
